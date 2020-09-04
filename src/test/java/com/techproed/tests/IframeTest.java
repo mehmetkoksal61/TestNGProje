@@ -34,7 +34,7 @@ public class IframeTest {
     public void iframeTest2(){
         driver.get("https://the-internet.herokuapp.com/iframe");
 
-        //iframe ye id ile gitme
+        //iframe ye id ne name ile gitme
         driver.switchTo().frame("mce_0_ifr");
 
         WebElement paragraf = driver.findElement(By.xpath("//p"));

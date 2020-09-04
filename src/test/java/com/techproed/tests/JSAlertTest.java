@@ -24,6 +24,7 @@ public class JSAlertTest {
 
     @BeforeMethod
     public void calis(){
+
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
     }
     @Test
@@ -33,7 +34,9 @@ public class JSAlertTest {
         WebElement button = driver.findElement(By.xpath("//button[@onclick='jsAlert()']"));
         button.click();
 
-        //Alert e gecis yapma --> driver.switchTo().alert();
+        //Alert e gecis yapma -->
+        driver.switchTo().alert();
+
         //Alert in icerdigi mesaji almak icin getText kullaniriz.
         String alertMesaji = driver.switchTo().alert().getText();
         System.out.println(alertMesaji);
