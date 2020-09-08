@@ -54,4 +54,37 @@ public class ActionClassTest extends TestBase {
         }
         actions.sendKeys(Keys.PAGE_UP).perform();
     }
+    @Test
+    public void buyukKucukYazma(){
+        //MERHABA nasilsiniz LIVE channel
+        driver.get("http://google.com");
+
+        WebElement aramaKutusu= driver.findElement(By.name("q"));
+        //Bu standar yazma metodumuz
+        //aramaKutusu.sendKeys("merhaba nasilsiniz live channel");
+
+        //Bu sekilde SHIFT e basili tutup her karakteri buyuk yazar
+        //aramaKutusu.sendKeys(Keys.SHIFT+"merhaba nasilsiniz live channel");
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(aramaKutusu).click()
+                .keyDown(Keys.SHIFT)
+                .sendKeys("merhaba")
+                .keyUp(Keys.SHIFT)
+                .sendKeys("nasilsiniz")
+                .perform();
+    }
+    @Test
+    public void dragAndDrop(){
+        //MERHABA nasilsiniz LIVE channel
+        driver.get("http://google.com");
+
+        WebElement aramaKutusu= driver.findElement(By.name("q"));
+        WebElement logo= driver.findElement(By.id("hplogo"));
+
+        Actions actions = new Actions(driver);
+        //logo webelementini aramakutusu webelementine surukle birak
+        actions.dragAndDrop(logo, aramaKutusu).perform(); //google buna izin vermedi
+
+    }
 }
