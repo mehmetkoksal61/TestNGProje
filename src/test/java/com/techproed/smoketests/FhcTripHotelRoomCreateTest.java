@@ -13,7 +13,7 @@ public class FhcTripHotelRoomCreateTest extends TestBase {
         driver.findElement(By.id("UserName")).sendKeys(ConfigurationReader.getProperty("username"));
         driver.findElement(By.id("Password")).sendKeys(ConfigurationReader.getProperty("password") + Keys.ENTER);
     }
-    @Test
+    @Test (  groups = {"fhctrip", "hotelolusturma"} )
     public void test01(){
         // ConfigurationReader class'ına diyoruzki, .properties dosyasının içerisindeki
         // room_create_url (anahtarının) değerini al.

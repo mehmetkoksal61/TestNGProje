@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class GlbSignUpTest {
     // artik extend yapilmasina gerek yok
 
-    @Test
+    @Test (  groups = "glbtrader" )
     public void test(){
         Driver.getDriver().get(ConfigurationReader.getProperty("yeni_urls"));
         GlbSignUpPage sayfa =new GlbSignUpPage();
@@ -21,6 +21,7 @@ public class GlbSignUpTest {
         sayfa.sifre.sendKeys(ConfigurationReader.getProperty("sifre"));
         sayfa.sifreTekrar.sendKeys(ConfigurationReader.getProperty("sifre")+ Keys.ENTER);
         //sayfa.signUp.click();
+        System.out.println(sayfa.yazi.getText());
         boolean basarili =sayfa.yazi.getText().contains("Succes");
         Assert.assertTrue(basarili);
 
