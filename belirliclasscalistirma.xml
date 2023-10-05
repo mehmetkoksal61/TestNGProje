@@ -5,9 +5,10 @@
              ile ya da File->Save All ile kaydetmeniz gerekiyorç
         -->
         <classes>
-            <class name="com.techproed.tests.Ornek_WebTable"></class>
+            <class name="com.techproed.tests.Ornek_WebTable"></class> -->Yeni ekleme
             <class name="com.techproed.tests.FhcTripLoginTest"></class>
 
         </classes>
+        
     </test>
 </suite>
